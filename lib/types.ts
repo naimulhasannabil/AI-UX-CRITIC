@@ -6,17 +6,18 @@ export interface Issue {
   suggestion: string
 }
 
-export interface AnalysisResult {
-  overallScore: number
-  scores: {
-    accessibility: number
-    usability: number
-    visual: number
-    layout: number
-  }
-  issues: Issue[]
-  summary: string
+export interface AnalysisIssue {
+  id: number
+  x: number
+  y: number
+  severity: "critical" | "warning" | "info"
+  message: string
 }
+
+export interface AnalysisResult {
+  issues: AnalysisIssue[]
+}
+
 
 export interface SavedAnalysis {
   id: string
