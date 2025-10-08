@@ -35,7 +35,7 @@ export function FloatingAssistant() {
       <Button
         onClick={() => setIsOpen(true)}
         size="lg"
-        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full p-0 shadow-lg hover:scale-110 transition-transform"
+        className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full p-0 shadow-lg hover:scale-110 transition-transform glow-button cursor-pointer"
       >
         <Sparkles className="h-6 w-6" />
       </Button>
@@ -154,7 +154,7 @@ export function FloatingAssistant() {
             disabled={isLoading}
             className="flex-1 text-sm"
           />
-          <Button type="submit" size="icon" disabled={!input.trim() || isLoading}>
+          <Button type="submit" size="icon" disabled={!input.trim() || isLoading} className="glow-button">
             {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
           </Button>
         </form>

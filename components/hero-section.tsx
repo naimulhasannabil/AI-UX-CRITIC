@@ -30,12 +30,12 @@ export function HeroSection() {
 
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <Link href="/analyze">
-            <Button size="lg" className="glow-button group h-12 px-8 text-base">
+            <Button size="lg" className="glow-button group h-12 px-8 text-base cursor-pointer">
               Try Now
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-          <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent" onClick={scrollToAnalyze}>
+          <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent cursor-pointer hover:glow-button" onClick={scrollToAnalyze}>
             View Demo
           </Button>
         </div>

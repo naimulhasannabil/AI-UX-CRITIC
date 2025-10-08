@@ -21,7 +21,7 @@ export function CTASection() {
           </p>
 
           <Link href="/analyze">
-            <Button size="lg" className="group h-12 px-8 text-base">
+            <Button size="lg" className="group h-12 px-8 text-base glow-button cursor-pointer">
               Analyze Your Design
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>

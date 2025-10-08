@@ -31,7 +31,7 @@ export function Navbar() {
           <div className="rounded-lg bg-primary/10 p-2">
             <Sparkles className="h-5 w-5 text-primary" />
           </div>
-          <span className="text-xl font-bold">UX Critic</span>
+          <span className="text-xl font-bold glow-text">UX Critic</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -94,10 +94,10 @@ export function Navbar() {
                     {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                   </Button>
                   <Link href="/auth/signin">
-                    <Button variant="ghost">Sign In</Button>
+                    <Button variant="ghost" className="hover:glow-button cursor-pointer">Sign In</Button>
                   </Link>
                   <Link href="/auth/signup">
-                    <Button>Get Started</Button>
+                    <Button className="glow-button cursor-pointer">Get Started</Button>
                   </Link>
                 </>
               )}
@@ -181,7 +181,7 @@ export function Navbar() {
                   </Button>
                 </Link>
                 <Link href="/auth/signup" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full">Get Started</Button>
+                  <Button className="w-full glow-button">Get Started</Button>
                 </Link>
               </>
             )}
