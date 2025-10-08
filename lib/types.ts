@@ -12,10 +12,22 @@ export interface AnalysisIssue {
   y: number
   severity: "critical" | "warning" | "info"
   message: string
+  category: string
+  title: string
+  description: string
+  suggestion: string
 }
 
 export interface AnalysisResult {
+  overallScore: number
+  scores: {
+    accessibility: number
+    usability: number
+    visual: number
+    layout: number
+  }
   issues: AnalysisIssue[]
+  summary: string
 }
 
 
