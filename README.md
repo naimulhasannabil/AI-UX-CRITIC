@@ -117,45 +117,46 @@ An intelligent design analysis platform that provides instant UX feedback using 
 8. **AI Assistant** - Ask UX questions in the AI Assistant chat
 
 ## Project Structure
-
+```
 ux-critic/
 ├── app/
-│ ├── api/
-│ │ ├── analyze/route.ts # Analysis API endpoint
-│ │ └── assistant/route.ts # AI Assistant API endpoint
-│ ├── analyze/
-│ │ └── page.tsx # Analysis page
-│ ├── assistant/
-│ │ └── page.tsx # AI Assistant chat page
-│ ├── auth/
-│ │ ├── signin/page.tsx # Sign in page
-│ │ └── signup/page.tsx # Sign up page
-│ ├── dashboard/
-│ │ └── page.tsx # User dashboard
-│ ├── settings/
-│ │ └── page.tsx # User settings
-│ ├── upload/
-│ │ └── page.tsx # Upload interface
-│ ├── globals.css # Global styles and theme
-│ ├── layout.tsx # Root layout with providers
-│ └── page.tsx # Landing page
+│   ├── api/
+│   │   ├── analyze/route.ts       # Analysis API endpoint
+│   │   └── assistant/route.ts     # AI Assistant API endpoint
+│   ├── analyze/
+│   │   └── page.tsx               # Analysis page
+│   ├── assistant/
+│   │   └── page.tsx               # AI Assistant chat page
+│   ├── auth/
+│   │   ├── signin/page.tsx        # Sign in page
+│   │   └── signup/page.tsx        # Sign up page
+│   ├── dashboard/
+│   │   └── page.tsx               # User dashboard
+│   ├── settings/
+│   │   └── page.tsx               # User settings
+│   ├── upload/
+│   │   └── page.tsx               # Upload interface
+│   ├── globals.css                # Global styles and theme
+│   ├── layout.tsx                 # Root layout with providers
+│   └── page.tsx                   # Landing page
 ├── components/
-│ ├── ui/ # shadcn/ui components
-│ ├── analysis-results.tsx # Analysis display component
-│ ├── export-pdf-button.tsx # Export functionality
-│ ├── image-upload.tsx # File upload with clipboard
-│ ├── navbar.tsx # Navigation with theme toggle
-│ ├── protected-route.tsx # Auth protection wrapper
-│ └── ... # Other components
+│   ├── ui/                        # shadcn/ui components
+│   ├── analysis-results.tsx       # Analysis display component
+│   ├── export-pdf-button.tsx      # Export functionality
+│   ├── image-upload.tsx           # File upload with clipboard
+│   ├── navbar.tsx                 # Navigation with theme toggle
+│   ├── protected-route.tsx        # Auth protection wrapper
+│   └── ...                        # Other components
 ├── lib/
-│ ├── analysis-context.tsx # Analysis state management
-│ ├── auth-context.tsx # Authentication state
-│ ├── theme-context.tsx # Theme state management
-│ ├── keyboard-shortcuts.tsx # Global keyboard shortcuts
-│ ├── types.ts # TypeScript interfaces
-│ └── utils.ts # Utility functions
-├── public/ # Static assets
-└── README.md # Project documentation
+│   ├── analysis-context.tsx       # Analysis state management
+│   ├── auth-context.tsx           # Authentication state
+│   ├── theme-context.tsx          # Theme state management
+│   ├── keyboard-shortcuts.tsx     # Global keyboard shortcuts
+│   ├── types.ts                   # TypeScript interfaces
+│   └── utils.ts                   # Utility functions
+├── public/                        # Static assets
+└── README.md                      # This file
+```
 
 ## Key Features Explained
 
