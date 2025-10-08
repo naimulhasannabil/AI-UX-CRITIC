@@ -118,7 +118,6 @@ An intelligent design analysis platform that provides instant UX feedback using 
 
 ## Project Structure
 
-\`\`\`
 ux-critic/
 ├── app/
 │ ├── api/
@@ -157,7 +156,6 @@ ux-critic/
 │ └── utils.ts # Utility functions
 ├── public/ # Static assets
 └── README.md # Project documentation
-\`\`\`
 
 ## Key Features Explained
 
