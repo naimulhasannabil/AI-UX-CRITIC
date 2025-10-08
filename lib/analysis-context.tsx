@@ -54,9 +54,10 @@ export function AnalysisProvider({ children }: { children: ReactNode }) {
     const timestamp = Date.now()
     const id = `analysis-${timestamp}`
 
+    // ✅ Fixed severity mapping to match your defined types
     const criticalIssues = analysis.issues.filter((i) => i.severity === "critical").length
-    const warningIssues = analysis.issues.filter((i) => i.severity === "high" || i.severity === "medium" || i.severity === "low").length
-    const infoIssues = 0 // "info" is not a valid severity, so set to 0 or update your types if needed
+    const warningIssues = analysis.issues.filter((i) => i.severity === "warning").length
+    const infoIssues = analysis.issues.filter((i) => i.severity === "info").length
 
     const newAnalysis: SavedAnalysis = {
       id,
@@ -78,9 +79,7 @@ export function AnalysisProvider({ children }: { children: ReactNode }) {
     setAnalyses((prev) => prev.filter((a) => a.id !== id))
   }
 
-  const getAnalysis = (id: string) => {
-    return analyses.find((a) => a.id === id)
-  }
+  const getAnalysis = (id: string) => analyses.find((a) => a.id === id)
 
   return (
     <AnalysisContext.Provider value={{ analyses, saveAnalysis, deleteAnalysis, getAnalysis }}>

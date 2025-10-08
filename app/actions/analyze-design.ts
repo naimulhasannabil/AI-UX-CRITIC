@@ -74,7 +74,7 @@ Provide 3-7 issues. Be specific and actionable.`
 
     console.log("[v0] AI Response:", text)
 
-    // Parse the JSON response
+    // Parse JSON response
     const jsonMatch = text.match(/\{[\s\S]*\}/)
     if (!jsonMatch) {
       throw new Error("Failed to parse AI response")
@@ -82,16 +82,16 @@ Provide 3-7 issues. Be specific and actionable.`
 
     const parsed = JSON.parse(jsonMatch[0])
 
-    // Add IDs to issues
-    const issues: AnalysisIssue[] = parsed.issues.map((issue: any, index: number) => ({
+    // ✅ Use Record<string, unknown> instead of any
+    const issues: AnalysisIssue[] = (parsed.issues as Record<string, unknown>[]).map((issue, index) => ({
       id: index + 1,
-      severity: issue.severity,
-      category: issue.category,
-      title: issue.title,
-      description: issue.description,
-      suggestion: issue.suggestion,
-      x: issue.x || 300,
-      y: issue.y || 400,
+      severity: issue.severity as "critical" | "warning" | "info",
+      category: String(issue.category),
+      title: String(issue.title),
+      description: String(issue.description),
+      suggestion: String(issue.suggestion),
+      x: Number(issue.x) || 300,
+      y: Number(issue.y) || 400,
     }))
 
     return {
@@ -102,7 +102,7 @@ Provide 3-7 issues. Be specific and actionable.`
   } catch (error) {
     console.error("[v0] Error analyzing design:", error)
 
-    // Return mock data as fallback
+    // ✅ Mock fallback data
     return {
       score: 72,
       summary: "Analysis completed with mock data due to an error.",

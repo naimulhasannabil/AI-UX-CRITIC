@@ -109,7 +109,6 @@ export async function POST(req: Request) {
       return Response.json({ error: "Invalid image format" }, { status: 400 })
     }
 
-    const mediaType = matches[1]
     const base64Data = matches[2]
 
     try {
@@ -125,10 +124,10 @@ export async function POST(req: Request) {
                 text: `You are an expert UX designer and accessibility consultant. Analyze this website/app screenshot and provide a comprehensive UX critique.
 
 Evaluate the following aspects:
-1. **Accessibility**: Color contrast, text readability, WCAG compliance, touch target sizes
-2. **Usability**: Navigation clarity, CTA visibility, user flow, information hierarchy
-3. **Visual Design**: Typography, color palette, consistency, whitespace usage
-4. **Layout**: Alignment, spacing, responsive design indicators, visual balance
+1. Accessibility: Color contrast, text readability, WCAG compliance, touch target sizes
+2. Usability: Navigation clarity, CTA visibility, user flow, information hierarchy
+3. Visual Design: Typography, color palette, consistency, whitespace usage
+4. Layout: Alignment, spacing, responsive design indicators, visual balance
 
 Provide:
 - An overall UX score (0-100)
@@ -140,8 +139,7 @@ Be thorough but constructive. Focus on the most impactful improvements.`,
               },
               {
                 type: "image",
-                image: base64Data,
-                mimeType: mediaType,
+                image: base64Data, // ✅ removed mimeType
               },
             ],
           },
@@ -149,10 +147,11 @@ Be thorough but constructive. Focus on the most impactful improvements.`,
       })
 
       return Response.json({ analysis: object })
-    } catch (aiError: any) {
+    } catch (aiError: unknown) {
       console.error("[v0] AI Gateway error:", aiError)
+      const message = aiError instanceof Error ? aiError.message : String(aiError)
 
-      if (aiError?.message?.includes("customer_verification_required") || aiError?.message?.includes("credit card")) {
+      if (message.includes("customer_verification_required") || message.includes("credit card")) {
         return Response.json({
           analysis: getMockAnalysis(),
           usedMockData: true,
