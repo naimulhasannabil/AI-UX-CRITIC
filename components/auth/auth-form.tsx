@@ -125,7 +125,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         <div className="grid grid-cols-2 gap-3">
           <Button
             type="button"
-            variant="secondary"
+            variant="outline"
             onClick={() => handleSocialAuth("github")}
             className="bg-background/50"
           >
@@ -134,7 +134,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           </Button>
           <Button
             type="button"
-            variant="secondary"
+            variant="outline"
             onClick={() => handleSocialAuth("google")}
             className="bg-background/50"
           >
