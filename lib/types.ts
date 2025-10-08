@@ -19,6 +19,7 @@ export interface AnalysisIssue {
 }
 
 export interface AnalysisResult {
+  score: number
   overallScore: number
   scores: {
     accessibility: number
