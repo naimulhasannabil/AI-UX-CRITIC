@@ -99,7 +99,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             </div>
           )}
 
-          <Button type="submit" className="w-full glow-effect" disabled={isLoading}>
+          <Button type="submit" className="w-full glow-button cursor-pointer" disabled={isLoading}>
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -127,7 +127,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             type="button"
             variant="outline"
             onClick={() => handleSocialAuth("github")}
-            className="bg-background/50"
+            className="bg-background/50 cursor-pointer"
           >
             <Github className="mr-2 h-4 w-4" />
             GitHub
@@ -136,7 +136,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             type="button"
             variant="outline"
             onClick={() => handleSocialAuth("google")}
-            className="bg-background/50"
+            className="bg-background/50 cursor-pointer"
           >
             <Mail className="mr-2 h-4 w-4" />
             Google
